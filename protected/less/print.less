@@ -1,0 +1,43 @@
+@import "_variables.less";
+/*************************************************************************
+ * Allgemein
+ *************************************************************************/
+body > .container       { padding: 20px 40px; }
+h1                      { font-size: 2em; margin-bottom: 30px; }
+
+.logo                   { float: right; }
+
+.table-bordered {       border-color: #888; 
+    th, td              { border-color: #888; }
+}
+
+.col1                   { width: 50%; }
+.col2                   { width: 50%; }
+
+#yw0_c1                 { width: 10%; }
+#yw0_c2                 { width: 20%; }
+#yw0_c3                 { width: 20%; }
+
+
+/*************************************************************************
+ * Forms
+ *************************************************************************/
+#closing-grid .filters                        { display: none; }
+#closing-grid table.items tr td               { text-align:left; }
+#closing-grid table.items tr th               { text-align:left; }
+#closing-grid table.items tr{
+    td:nth-child(7)                           { text-align: right; }
+}
+#closing-grid table.items                     { border-collapse: collapse; }
+#closing-grid table.items tr{
+    th:nth-child(7)                           { text-align: right; }
+}
+#closing-grid tfoot tr{
+    td:nth-child(6), td:nth-child(7)          { border-top: 2px solid @black; }
+}
+/*************************************************************************
+ * Gridviews
+ *************************************************************************/
+.grid-view tr:hover                                      { background-color: #EEE; }
+.grid-view .empty:hover                                  { background-color: #EEE; }
+.grid-view table.items th                                { color: @black; background: #FAFAFA; background-image: linear-gradient(#fff,#EEE); line-height: 20px; }

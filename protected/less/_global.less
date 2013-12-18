@@ -1,0 +1,213 @@
+/*************************************************************************
+ * Allgemein
+ *************************************************************************/
+body                                                { height: 100%; background-color: @body-background-color; padding-bottom: 10px; }
+.container                                          { width: 1200px; }
+a                                                   { color: @content-link-color; }
+.btn a                                              { text-decoration: none; color: @black; }
+i[class^="icon-"], i[class*=" icon-"] {
+    a &                                             { text-decoration: none; color: @black; }
+    &.hide                                          { display: none; }
+}
+.additional-info                                    { display: inline-block; padding: 1px 2px; font-size: 0.7em; line-height: 1em; border: 1px solid @gray-light; color: @gray-darker; background: @gray-lighter; .rounded-corners(10px); cursor: help; }
+
+/*************************************************************************
+ * Base Tags
+ *************************************************************************/
+h1                                                  { font-size: 2.2em; margin-bottom: 0.7em; }
+h2                                                  { font-size: 1.7em; }
+h3                                                  { font-size: 1.4em; }
+h4                                                  { font-size: 1.2em; }
+h5                                                  { font-size: 1em; margin: 1.5em 0 1em; }
+
+/*************************************************************************
+ * Navigation
+ *************************************************************************/
+.navbar {                                           position: relative; margin-bottom: 50px; min-width: 1000px;
+    .navbar-inner                                   { background: @menu-color; border: none; }
+    .brand                                          { color: @white; margin: 0; padding: 10px; }
+    .nav {
+        .active, .dropdown.open {
+            > a, a:hover, a:focus                   { background-color: darken(@menu-color, 12%); }
+        }
+
+        > li > a                                    { color: @white; }
+        li.dropdown > .dropdown-toggle .caret       { border-top-color: @white }
+    }
+
+    a i                                             { color: @white; }
+}
+
+.front-layout .sidebar-nav                          { padding: 0; }
+.nav-list > li > a                                  { padding: 5px 15px; }
+.nav-header                                         { padding: 5px 15px; }
+
+/*************************************************************************
+ * Content
+ *************************************************************************/
+.content                                            { padding: 30px; overflow: hidden; background-color: @white; border-radius: 10px; border: 1px solid; border-color: @border-color; }
+.content > :first-child                             { margin-top: 0; }
+.content > :last-child                              { margin-bottom: 0; }
+.content .row                                       { margin-left: 0; }
+.btn-primary a                                      { text-decoration: none; color: @white; }
+
+.errorSummary,
+.errorMessage                                       { padding: 7px; margin-bottom: 20px; background: #FCC; font-size: 0.9em; }
+
+.row { margin-left: 0;
+    &.inline {
+        input,
+        label                                       { display: inline-block; }
+        input[type="radio"],
+        input[type="checkbox"]                      { margin: 0 5px 2px; }
+    }
+    input.block { display: block; }
+
+    &.buttons                                       { margin-top: 10px; }
+}
+
+.row-fluid {
+    &.buttons                                       { margin-top: 10px; }
+}
+
+.well {
+    > :first-child                                  { margin-top: 0; }
+    h2                                              { margin: 0 0 1em; line-height: 1em; font-size: 1.2em; }
+}
+
+.table .eased                                       { background-color: @gray-very-light; }
+
+/*************************************************************************
+ * Forms
+ *************************************************************************/
+form {
+    .note { font-style: italic; }
+    .hint { color: #999; }
+}
+
+input[type="radio"]:focus                           { outline: auto; }
+
+/*************************************************************************
+ * Advanced input
+ *************************************************************************/
+.mod-advanced-input {                               position: relative; float: none !important;
+    ul                                              { overflow: auto; min-height: 20px; padding: 0 26px 4px 6px; margin-left: 0; border: 1px solid @gray-light; background: @white; .box-shadow(0 1px 1px fade(@black, 7.5%) inset); .rounded-corners; }
+    li                                              { float: left; margin: 5px 5px 0 0; list-style: none; }
+    .add-item input                                 { width: 10px; margin: 0; padding: 0; border: 0; .box-shadow(none); }
+    .set {                                           padding: 0 5px; background-image: @light-dark-blue; .rounded-corners;
+        span                                        { display: inline-block; margin-right: 5px; color: @white }
+    }
+    .close                                          { color: @white; .opacity(.6);  }
+    &[class*="span"]                                { margin-left: 0; }
+    .modalButton, .modalButtonGrid                  { position: absolute; right: 0; padding: 6px; }
+    i                                               { .opacity(0.5); }
+    i:hover                                         { .opacity(1); }
+}
+
+/*************************************************************************
+ * Dropdown-Menu
+ *************************************************************************/
+.dropdown-menu                                      { background-color: @white; }
+.dropdown-menu {
+    li > a:hover, 
+    li > a:focus, 
+    .dropdown-submenu:hover > a {                   background: @background-image-color; color: @white; filter: none;
+        .typeahead                                  { background: @white; color: inherit; }
+    }
+    .active > a,
+    .active > a:hover                               { background-image: @light-dark-blue; filter: none; }
+}
+
+/*************************************************************************
+ * Choice-Modal
+ *************************************************************************/
+
+.modal-choices {                              width: 700px; margin-left: -350px;
+    h2                                      { margin: 0; color: @color; }
+    .group a                                { text-decoration: none; color: @black; }
+    .group p                                { margin: 0; }
+    .group                                  { min-height: 185px; padding: 5px 15px 15px 15px; border: 1px solid @gray-lighter; cursor: pointer; }
+    .group:hover                            { background-color: @gray-very-light; }
+    .active {                                 padding: 4px 14px 14px 14px; border: 2px solid @light-blue; .rounded-corners(10px);
+        a                                   { outline: none; }
+    }
+}
+
+/*************************************************************************
+ * Modal
+ *************************************************************************/
+.modal {
+    > form                                          { margin: 0; }
+    &.modal-large                                   { width: 900px; left: 39%; }
+    .alert                                          { padding: 10px; margin-bottom: 0; }
+    .alert-success                                  { padding: 10px; }
+}
+
+/*************************************************************************
+ * Typeahead
+ *************************************************************************/
+.typeahead {                                        z-index: 21060; /* 10 höher als Modal */
+    .info                                           { display: block; margin-bottom: 4px; font-size: 0.8em; line-height: 1em; color: @gray; }
+    .active .info                                   { color: @gray-light; }
+}
+p.info                                              { font-size: 0.9em; color: @gray-light; }
+
+/*************************************************************************
+ * Cloneables
+ *************************************************************************/
+.cloneable-toggle {                                 display: block; /*padding: 4px 5px;*/ font-size: 0.85em;
+    i                                               { /*margin-left: 10px;*/ .opacity(0.5); }
+}
+.cloneable-btn {                                    background: @white; /*border: 1px solid @gray-light;*/ /*.rounded-corners(5px);*/ cursor: pointer;
+    &.action                                        { text-decoration: none; }
+    &.add-detail a                                  { font-weight: normal; }
+}
+
+/*************************************************************************
+ * Datepicker
+ *************************************************************************/
+.input-append, .input-prepend {
+    &.date .add-on {                                  cursor: pointer;
+        i                                           { display: inline-block; width: 14px; height: 14px; }
+    }
+    &.datepicker                                    { padding: 0; }
+}
+
+
+/*************************************************************************
+ * Bootstrap-Toolbar
+ *************************************************************************/
+.bootstrap-widget {
+    .info                                           { margin-bottom: 20px; color: @gray; }
+    .bootstrap-toolbar {                            margin-right: 10px; 
+        .btn > i                                    { margin: 0; }
+    }
+}
+
+/*************************************************************************
+ * Addible
+ *************************************************************************/
+table.addible {                               width: 100%; table-layout: fixed; margin-bottom: .5em;
+    input, select                           { width: 100%; height: 30px; .box-sizing(border-box); margin: 0; }
+    tr {
+        td                                  { vertical-align: top; border-top: 1px solid @gray-very-light; line-height: 28px; }
+        th:last-child                       { width: 32px; }
+        th.narrow                           { width: 80px; }
+        td:last-child                       { text-align: center; }
+        &.view td                           { line-height: normal; }
+    }
+    .errorMessage                           { margin: 10px 0 0 0; line-height: normal; }
+    a i                                     { .opacity(.2); }
+    a:hover i                               { .opacity(.6); }
+}
+
+.addible-add                                { display: inline-block; margin-bottom: 15px; }
+
+
+#VaccinationStatus-addible {
+    .col1                                   { width: 50%; }
+    .diseaseInput {                         
+        select, input                       { width: 85% }
+        .btn                                { width: 5% }
+    }
+}

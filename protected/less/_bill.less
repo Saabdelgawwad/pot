@@ -1,0 +1,20 @@
+/*************************************************************************
+ * Closing-Form
+ *************************************************************************/
+#Closing-Form {                                 display: inline-block;                           
+    .line                                       { position: relative; top: 7px; }
+}
+
+#closing-grid {   
+    table.items {                               border-collapse: collapse;
+        tr {     
+            td, th                              { text-align:left; }
+            th:nth-child(7), td:nth-child(7)    { text-align: right; }
+        }
+    }
+
+    tfoot {
+        td:nth-child(6), td:nth-child(7)        { border-top: 2px solid @black; }
+    }
+}
+

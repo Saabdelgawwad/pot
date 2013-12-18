@@ -1,0 +1,30 @@
+/*************************************************************************
+ * Allgemeines
+ *************************************************************************/
+
+.admin-buttons                              { float: right; }
+
+/*************************************************************************
+ * Grid-Views
+ *************************************************************************/
+
+.grid-view {                                  margin: 0; padding-top:20px;
+    table.items {                             border: 1px solid #EEE; border-collapse: separate;
+        th {                                  border: none; background-color: #FAFAFA; line-height: 20px; .gradient(@white, #EEE); color: #333;
+            a                               { color: #333 !important; }
+            &:hover a:after                 { display: none; }
+        }
+        tr {
+            &.odd                           { background: #FAFAFA; }
+            &.even                          { background: @white; }
+        }
+        tbody tr:hover                      { background: #EEE; }
+    }
+    .filters {
+        input, 
+        select                              { .box-sizing; height: 28px; }
+    }
+    .pager {                                  text-align: center;
+        li > a                              { padding: 1px 8px; .rounded-corners; }
+    }
+}

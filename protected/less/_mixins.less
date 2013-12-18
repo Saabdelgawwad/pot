@@ -1,0 +1,13 @@
+.rounded-corners(@r: @border-radius)        { .rounded-corners(@r, @r, @r, @r); }
+.rounded-corners(@t, @r, @b, @l)            { -webkit-border-radius: @arguments; -moz-border-radius: @arguments; -ms-border-radius: @arguments; -o-border-radius: @arguments; border-radius: @arguments; }
+
+.box-shadow(@inner, @outer)                 { @shadow: @inner inset, @outer; .box-shadow(@shadow); } // http://markdotto.com/2012/04/05/comma-separated-values-in-less-mixins/
+.box-shadow(@style)                         { -moz-box-shadow: @style; -webkit-box-shadow: @style; box-shadow: @style; }
+
+.text-shadow(@style)                        { text-shadow: @style; }
+
+.box-sizing(@type: border-box)              { -webkit-box-sizing: @type; -moz-box-sizing: @type; box-sizing: @type; }
+
+.gradient(@from, @to)                       { background-image: -moz-linear-gradient(center top , @from, @to);  background-image: -khtml-gradient(linear, left top, left bottom, from(@from), to(@to)); background-image: -ms-linear-gradient(top, @from, @to); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @from), color-stop(100%, @to)); background-image: -webkit-linear-gradient(top, @from, @to); background-image: -o-linear-gradient(top, @from, @to); background-image: linear-gradient(@from, @to); }
+
+.opacity(@opacity)                          { opacity: @opacity; -moz-opacity: @opacity; -khtml-opacity: @opacity; @ieOpacity: @opacity * 100; filter: ~"alpha(opacity=@{ieOpacity})"; -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})"; }
